@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SMP PGRI BLUNGUN - Beranda</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+  <style>
+    /* Styling tambahan agar plugin menyatu dengan desain asli */
+    #map { height: 300px; width: 100%; border-radius: 8px; z-index: 1; }
+    .chart-container { position: relative; height: 300px; width: 100%; }
+    table.dataTable { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="right"><i class="fas fa-map-marker-alt"></i> dk.Blungun ds.Blungun Jepon </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="brand">
+        <img src="assets/img/logo.jpeg" alt="logo">
+        <div class="title">SMP PGRI BLUNGUN</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a>
+      <a href="profil.html"><i class="fas fa-user"></i> Profil</a>
+      <a href="guru.html"><i class="fas fa-chalkboard-teacher"></i> Data Guru</a>
+      <a href="ppdb.html"><i class="fas fa-graduation-cap"></i> PPDB</a>
+      <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+    </div>
+  </nav>
+
+  <header class="hero hero-overlay">
+    <div class="container">
+      <div class="lead">Selamat Datang di</div>
+      <h1>SMP PGRI BLUNGUN</h1>
+      <p>Mewujudkan generasi cerdas, berkarakter, dan berdaya saing.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container grid">
+      <div class="card">
+        <h3><i class="fas fa-quote-left"></i> Prakata Kepala Sekolah</h3>
+        <p>Selamat datang di website resmi SMP PGRI BLUNGUN. Kami berkomitmen memberikan pendidikan terbaik bagi siswa.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-tasks"></i> Program Sekolah</h3>
+        <p>Program penguatan karakter, dan kegiatan ekstrakurikuler yang mendukung perkembangan siswa.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-building"></i> Fasilitas</h3>
+        <p>Ruang kelas nyaman, laboratorium sederhana, perpustakaan, dan lapangan olahraga.</p>
+      </div>
+    </div>
+
+    <div class="container grid" style="margin-top: 2rem;">
+        <div class="card">
+            <h3><i class="fas fa-chart-bar"></i> Statistik Siswa</h3>
+            <div class="chart-container">
+                <canvas id="studentChart"></canvas>
+            </div>
+            <p style="font-size: 0.8rem; text-align: center; margin-top: 5px;">Data jumlah siswa 5 tahun terakhir.</p>
+        </div>
+
+        <div class="card" style="grid-column: span 2;">
+            <h3><i class="fas fa-trophy"></i> Prestasi Terbaru</h3>
+            <div style="overflow-x: auto;">
+                <table id="prestasiTable" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Kegiatan</th>
+                            <th>Juara</th>
+                            <th>Tingkat</th>
+                            <th>Tahun</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Lomba Cerdas Cermat</td><td>1</td><td>Kecamatan</td><td>2024</td></tr>
+                        <tr><td>2</td><td>Porseni Bulutangkis</td><td>2</td><td>Kabupaten</td><td>2024</td></tr>
+                        <tr><td>3</td><td>Lomba Pidato Bahasa Jawa</td><td>1</td><td>Kecamatan</td><td>2023</td></tr>
+                        <tr><td>4</td><td>Olimpiade Sains (IPA)</td><td>3</td><td>Kabupaten</td><td>2023</td></tr>
+                        <tr><td>5</td><td>Lomba Kebersihan Kelas</td><td>1</td><td>Sekolah</td><td>2024</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container two-col">
+      <div>
+        <div class="card">
+          <h3><i class="fas fa-newspaper"></i> Berita Terbaru</h3>
+          <div class="news-item"><h4>Kegiatan Pembukaan Kelas Baru</h4><p>Acara pembukaan tahun ajaran baru berhasil dilaksanakan...</p></div>
+        </div>
+      </div>
+      <aside>
+        <div class="card">
+          <h3><i class="fas fa-info-circle"></i> Info Kegiatan</h3>
+          <p>Rapat orang tua, lomba antar kelas.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2><i class="fas fa-images"></i> Galeri & Kegiatan</h2>
+      <div class="grid">
+        <div class="card"><img src="assets/img/pembelajaran.jpeg" style="width:100%;border-radius:8px"><p style="margin-top:8px">Kegiatan belajar</p></div>
+        <div class="card"><img src="assets/img/eskul.jpeg" style="width:110%;border-radius:8px"><p style="margin-top:8px">Ekskul</p></div>
+        <div class="card"><img src="assets/img/kunjungan.jpeg" style="width:60%;border-radius:8px"><p style="margin-top:8px">Kunjungan</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+        <div class="card">
+            <h3><i class="fas fa-map-marked-alt"></i> Lokasi Sekolah</h3>
+            <div id="map"></div>
+            <p style="margin-top: 10px;">Dk. Blungun, Ds. Blungun, Kec. Jepon, Kab. Blora.</p>
+        </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div><h4>Tentang</h4><p>SMP PGRI BLUNGUN - Sekolah berkomitmen mencetak generasi berkarakter.</p></div>
+      <div><h4>Link Cepat</h4><p>Beranda, Profil, PPDB, Kontak</p></div>
+      <div><h4>Informasi</h4><p>Berita, Kegiatan, Pengumuman</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // --- 1. Konfigurasi DataTables ---
+    $(document).ready(function() {
+        $('#prestasiTable').DataTable({
+            responsive: true,
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json' // Bahasa Indonesia
+            }
+        });
+    });
+
+    // --- 2. Konfigurasi Chart JS ---
+    const ctx = document.getElementById('studentChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar', // Jenis grafik: Bar
+        data: {
+            labels: ['2020', '2021', '2022', '2023', '2024'],
+            datasets: [{
+                label: 'Jumlah Siswa Baru',
+                data: [45, 50, 65, 60, 75], // Data dummy
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // --- 3. Konfigurasi Leaflet JS (Peta) ---
+    // Koordinat perkiraan area Jepon/Blora (Sesuaikan dengan koordinat asli sekolah)
+    var map = L.map('map').setView([-7.0889716, 111.4656705], 17); 
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([-7.0889716, 111.4656705]).addTo(map)
+        .bindPopup('SMP PGRI BLUNGUN<br>Lokasi Sekolah.')
+        .openPopup();
+  </script>
+
+</body>
+</html>
